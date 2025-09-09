@@ -45,3 +45,10 @@ jobs:
       - name: Limpa o arquivo de chave privada após uso
         run: |
            rm /tmp/private_key
+           
+      - name: Notificar Discord
+        run: |
+          curl -H "Content-Type: application/json" \
+               -X POST \
+               -d '{"content":"🚀 Deploy realizado com sucesso no repositório **${{ github.repository }}** na branch **${{ github.ref_name }}**"}' \
+               ${{ secrets.DISCORD_WEBHOOK }}
