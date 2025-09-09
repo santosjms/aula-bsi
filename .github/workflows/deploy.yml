@@ -50,5 +50,5 @@ jobs:
         run: |
           curl -H "Content-Type: application/json" \
                -X POST \
-               -d '{"content":"🚀 Deploy realizado com sucesso no repositório **${{ github.repository }}** na branch **${{ github.ref_name }}**"}' \
+               -d "{\"content\":\"🚀 Deploy realizado por **${{ github.actor }}** no repositório **${{ github.repository }}** na branch **${{ github.ref_name }}**\"}" \
                ${{ secrets.DISCORD_WEBHOOK }}
